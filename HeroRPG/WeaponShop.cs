@@ -68,11 +68,11 @@ namespace HeroRPG
             {
                 VisitWeaponShop(player);
             }
-            if (itemType.Contains("axe"))
-            {
-                item = new Axe();
-                return item;
-            }
+            //if (itemType.Contains("axe"))
+            //{
+            //    item = new Axe();
+            //    return item;
+            //}
             if (itemType.Contains("sword"))
             {
                 item = new Sword();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace HeroRPG
 {
@@ -18,13 +19,13 @@ namespace HeroRPG
             List<Item> inventory = new List<Item>();
             string chosenClass;
             //string shop = "";
-            
+            //ConsoleEffects.makeVoice();
             ConsoleEffects.TypeLine("Greeting, traveller\r\n");
             ConsoleEffects.TypeLine("I see you are looking for adventure.");
             do
             {
                 
-
+                
                 
                 health = 0;
                 dodge = 0;

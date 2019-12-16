@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Media;
+using System.Reflection;
+using System.Threading;
 
 namespace HeroRPG
 {
@@ -8,11 +11,14 @@ namespace HeroRPG
 
         public static void TypeLine(string line)
         {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.MainVoice);
+            player.PlayLooping();
             for (int i = 0; i < line.Length; i++)
             {
                 Console.Write(line[i]);
-                System.Threading.Thread.Sleep(50); // Sleep for 100 milliseconds
+                System.Threading.Thread.Sleep(75); // Sleep for 100 milliseconds
             }
+            player.Stop();
         }
 
         public static void SpeedLine(string line, int speed)
@@ -42,10 +48,6 @@ namespace HeroRPG
             Random random = new Random();
             return random.Next(min, max);
         }
-
-
-
-
 
         public static void ColorTextCyan(string coloredWords)
         {
@@ -86,38 +88,23 @@ namespace HeroRPG
            return titleName;
         }
 
+        //static public void print(string str, int delay)
+        //{
+        //    typewriter.SoundLocation = Environment.CurrentDirectory + "/typewriter.wav";
+        //    Thread skipThread = new Thread(skipText);
+        //    typewriter.PlayLooping();
+        //    textgap = delay;
+        //    foreach (char c in str)
+        //    {
+        //        Console.Write(c);
+        //        if (textgap != 0)
+        //            Thread.Sleep(textgap);
 
-        public static void CharacterText()
-        {
-            int beepgen1, beepgen2, beepgen3, beepgen4, beepgen5, beepgen6, beepgen7, beepgen8, beepgenn1, beepgenn2, beepgenn3, beepgenn4, beepgenn5, beepgenn6, beepgenn7, beepgenn8;
+        //    }
+        //    typewriter.Stop();
 
-            beepgen1 = (RandomNumber(37, 7000));
-            beepgen2 = (RandomNumber(37, 6000));
-            beepgen3 = (RandomNumber(37, 6000));
-            beepgen4 = (RandomNumber(37, 7000));
-            beepgen5 = (RandomNumber(37, 8000));
-            beepgen6 = (RandomNumber(37, 7000));
-            beepgen7 = (RandomNumber(37, 7000));
-            beepgen8 = (RandomNumber(37, 5000));
-            beepgenn1 = (RandomNumber(50, 200));
-            beepgenn2 = (RandomNumber(50, 250));
-            beepgenn3 = (RandomNumber(50, 300));
-            beepgenn4 = (RandomNumber(50, 200));
-            beepgenn5 = (RandomNumber(50, 250));
-            beepgenn6 = (RandomNumber(50, 200));
-            beepgenn7 = (RandomNumber(50, 300));
-            beepgenn8 = (RandomNumber(50, 250));
+        //}
 
-            Console.Beep(beepgen1, beepgenn1);
-            Console.Beep(beepgen2, beepgenn2);
-            Console.Beep(beepgen3, beepgenn3);
-            Console.Beep(beepgen4, beepgenn4);
-            Console.Beep(beepgen5, beepgenn5);
-            Console.Beep(beepgen6, beepgenn6);
-            Console.Beep(beepgen7, beepgenn7);
-            Console.Beep(beepgen8, beepgenn8);
-
-        }
 
 
 
